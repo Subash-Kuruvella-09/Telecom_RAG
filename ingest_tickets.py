@@ -14,6 +14,8 @@ COLLECTION = "tickets"
 DB_PATH = os.path.join("data", "tickets.db")
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
+# loading ticket documents from the sqlite database and converting them into a list of Document objects for embedding and storage in Chroma
+
 
 def load_ticket_documents(db_path: str) -> list[Document]:
     conn = sqlite3.connect(db_path)
